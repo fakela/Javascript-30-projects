@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Emoji Ajax Type Ahead</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <pattern id="pattern"
+           x="0" y="0" width="210" height="210"
+           patternUnits="userSpaceOnUse" >
+    <text class='emoji-pattern' x="0" y="100" width="80" font-size="80">
+      😋
+    </text>
+    <text class='emoji-pattern' x="100" y="200" width="80" font-size="80">
+      😋
+    </text>
+  </pattern>
+  <rect fill="url(#pattern)" x="0" y="0" width="100%" height="100%"/>
+</svg>
+<section>
+  <h1>Search for cool emojis</h1>
+  <h2>Its fun yay😈</h2>
+  <form class="search-form">
+    <input type="text" class="search" placeholder="Filter for Emoji Magic">
+    <div class="emoji-container">
+      <ul class="suggestions">
+      </ul>
+    </div>
+  </form>
+  <p>Search for your favourite emoji and use as your background pattern<br>
+    Quite easy
+  </p>
+</section>
+  <script  src="script.js"></script>
+
+</body>
+</html>

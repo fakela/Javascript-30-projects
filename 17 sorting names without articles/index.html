@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sort Without Articles</title>
+</head>
+<body>
+    <h1>Sorted Bands<br>
+      <code>ignoring (A, An, The, My)</code>
+    </h1>
+    <ul id="bands">
+      <li>Loading...</li>
+    </ul>
+
+  <style>
+    
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: url("https://images.unsplash.com/photo-1563472023863-8a12ae4832b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
+      background-size: cover;
+        font-size: 1.8em;
+        color: #383838;
+        min-height: 100vh;
+        margin: 0;
+        padding: 1em;
+        box-sizing: border-box;
+        background-color: #e7e4e4;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+      h1 {
+        text-align: center;
+      }
+    #bands {
+      list-style: inside square;
+      font-size: 20px;
+      background: white;
+      width: 500px;
+      margin: auto;
+      padding: 0;
+      box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.05);
+    }
+    
+    #bands li {
+      border-bottom: 1px solid #efefef;
+      padding: 20px;
+    }
+    
+    #bands li:last-child {
+      border-bottom: 0;
+    }
+    a {
+      color: #ffc600;
+      text-decoration: none;
+    }
+  </style>
+
+  <ul id="bands"></ul>
+
+<script>
+const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
+
+function strip(bandName) {
+  return bandName.replace(/^(a |the |an | my )/i, '').trim();
+}
+console.log(strip)
+const sortedBands = bands.sort((a, b) => strip(a) > strip(b) ? 1 : -1);
+
+document.querySelector('#bands').innerHTML =
+  sortedBands
+    .map(band => `<li>${band}</li>`)
+    .join('');
+console.log(sortedBands);
+</script>
+
+</body>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Unreal webcam fun 📷</title>
+    <meta charset="UTF-8">
+    <link type="text/css" href="style.css">
+  </head>
+<body>
+
+  <div class="photobooth">
+    <div class="controls">
+      <button class="btn" onClick="takePhoto()">Take Photo</button>
+      <button class="btn" onClick="setFilter('red')">Red Filter</button>
+      <button class="btn" onClick="setFilter('green')">Green Filter</button>
+      <button class="btn" onClick="setFilter('blue')">Blue Filter</button>
+      <button class="btn" onClick="setFilter('rgb')">Ghost Filter</button>
+      <button class="btn" onClick="setFilter('greenScreen')">Green Screen</button>
+      <button class="btn" onClick="setFilter('none')">Remove Filters</button>
+      <div class="rgb">
+        <label for="rmin">Red Min:</label>
+        <input type="range" min=0 max=255 name="rmin">
+        <label for="rmax">Red Max:</label>
+        <input type="range" min=0 max=255 name="rmax">
+
+        <br>
+
+        <label for="gmin">Green Min:</label>
+        <input type="range" min=0 max=255 name="gmin">
+        <label for="gmax">Green Max:</label>
+        <input type="range" min=0 max=255 name="gmax">
+
+        <br>
+
+        <label for="bmin">Blue Min:</label>
+        <input type="range" min=0 max=255 name="bmin">
+        <label for="bmax">Blue Max:</label>
+        <input type="range" min=0 max=255 name="bmax">
+      </div>
+    </div>
+
+    <canvas class="photo"></canvas>
+    <video class="player"></video>
+    <div class="strip"></div>
+  </div>
+
+</body>
+<script src="index.js"></script>
+</html>

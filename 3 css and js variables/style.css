@@ -1,0 +1,31 @@
+/* new css style  */
+:root {
+    --base: #c2562b;
+    --blur: 10px;
+    --spacing: 15px;
+}
+img {
+    padding: var(--spacing);
+    background: var(--base);
+    filter: blur(var(--blur));
+    width: 25%;
+}
+ 
+  body {
+    text-align: center;
+    background: #2b1031;
+    color: white;
+    font-family: 'helvetica neue', sans-serif;
+    font-weight: 100;
+    font-size: 25px;
+  }
+  .controls {
+    margin-bottom: 50px;
+  }
+  input {
+    width: 100px;
+  }
+  .js {
+    color: var(--base);
+  }
+  

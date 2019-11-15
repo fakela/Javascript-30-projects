@@ -1,0 +1,272 @@
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+@media (max-width: 600px) {
+  html {
+    font-size: 8px;
+  }
+}
+@media (max-width: 400px) {
+  html {
+    font-size: 6px;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Luckiest Guy', cursive;
+  color: #89260b;
+  background: radial-gradient(#024606, #2ba83c);
+  text-align: center;
+  height: 100%;
+}
+
+.container {
+  max-width: 600px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+p {
+  font-family: 'Luckiest Guy';
+}
+
+/*Modals*/
+.modal {
+  width: 66.6%;
+  background: white;
+  background: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  left: 16.5%;
+  z-index: 3;
+  border-radius: 10px;
+  border: 5px solid #89260b;
+}
+.modal h2 {
+  font-size: 5rem;
+  margin: 2% 1% 0;
+}
+
+/*Intro Modal*/
+.intro p {
+  font-size: 4rem;
+  margin-top: 2%;
+  cursor: pointer;
+  color: #0c7006;
+}
+.intro p:hover {
+  color: black;
+}
+
+/*Option Modals*/
+.mode div > p {
+  margin: 1% 0 0;
+  padding: 1%;
+  font-size: 3rem;
+  cursor: pointer;
+  color: #0c7006;
+}
+.mode div > p:hover {
+  color: black;
+}
+
+.mime-options :nth-child(odd) {
+  font-size: 3.5rem;
+  margin: 2% 0 0;
+  color: #0c7006;
+  cursor: pointer;
+}
+.mime-options :nth-child(odd):hover {
+  cursor: pointer;
+  color: black;
+}
+.mime-options :nth-child(2n) {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+/*Game Info*/
+.info-container {
+  height: 240px;
+  width: 100%;
+}
+@media (max-width: 400px) {
+  .info-container {
+    height: 150px;
+  }
+}
+
+h1 {
+  font-size: 6rem;
+  line-height: 1;
+  margin: 10px 0 10px;
+  text-shadow: 3px 3px white;
+}
+
+.scores-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 2%;
+}
+.scores-container > div {
+  background: #0c7006;
+  padding: 1%;
+  color: white;
+  border: 5px solid #89260b;
+  border-radius: 10px;
+  font-size: 2rem;
+}
+
+.score {
+  width: 100%;
+  margin: -10px 0 0;
+  font-size: 5rem;
+}
+
+.menu-options {
+  font-size: 4rem;
+  cursor: pointer;
+  text-shadow: 3px 3px white;
+}
+.menu-options:hover {
+  color: black;
+}
+
+.message, .message-whack {
+  margin-top: 1%;
+  display: block;
+  position: relative;
+  z-index: 10;
+  font-size: 5rem;
+  color: #0c7006;
+  text-shadow: 3px 3px white;
+}
+
+.message-whack {
+  margin-top: 6%;
+}
+
+/*Game Board*/
+.game-container {
+  width: 100vw;
+  padding: 0;
+  margin: 10px 0 0;
+}
+
+.game {
+  width: 600px;
+  height: 350px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px auto 50px;
+  cursor: url("https://www.dropbox.com/s/th0zd8ufw5xkwye/mallet.png?raw=1"), pointer;
+}
+@media (max-width: 600px) {
+  .game {
+    width: 400px;
+  }
+}
+@media (max-width: 400px) {
+  .game {
+    width: 300px;
+  }
+}
+
+.hole {
+  flex: 1 0 50%;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+}
+.hole:after {
+  display: block;
+  background: linear-gradient(135deg, #59260a, #a34310);
+  background-size: contain;
+  content: '';
+  width: 200px;
+  height: 80px;
+  border: 3px solid black;
+  border-radius: 75px 75px 0 0;
+  position: absolute;
+  z-index: 2;
+  bottom: -30px;
+  left: 50px;
+}
+@media (max-width: 600px) {
+  .hole:after {
+    left: 0px;
+  }
+}
+@media (max-width: 400px) {
+  .hole:after {
+    width: 150px;
+    height: 70px;
+  }
+}
+
+.mole {
+  background: url("https://www.dropbox.com/s/6bxx8txo4kawb3k/mole.png?raw=1") bottom center no-repeat;
+  background-size: 120px 160px;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  transition: all 0.4s;
+}
+@media (max-width: 400px) {
+  .mole {
+    background-size: 100px 138px;
+  }
+}
+
+/*Active Classes for Mime a Mole*/
+.hole.up .mole {
+  top: 0;
+}
+
+.avoid-clicks {
+  pointer-events: none;
+}
+
+.hole1.active:after {
+  background: #d63100;
+}
+
+.hole1.active.light:after {
+  background: red;
+}
+
+.hole2.active:after {
+  background: #4c0760;
+}
+
+.hole2.active.light:after {
+  background: #a602d8;
+}
+
+.hole3.active:after {
+  background: #0a7e84;
+}
+
+.hole3.active.light:after {
+  background: #0ff3ff;
+}
+
+.hole4.active:after {
+  background: #846c0b;
+}
+
+.hole4.active.light:after {
+  background: #ffe01c;
+}
